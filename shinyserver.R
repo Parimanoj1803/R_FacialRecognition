@@ -80,8 +80,6 @@ ui <- fluidPage(
  
 )
 
-# Define the Shiny server
-
 
 # Define the Shiny server
 server <- function(input, output) {
@@ -111,7 +109,6 @@ server <- function(input, output) {
     )
   },deleteFile = TRUE)
   
-  #deleteFile = TRUE
   output$prediction_text <- renderText({
     prediction <- predict(loaded_model, selected_image())
     label_index <- which.max(prediction)
